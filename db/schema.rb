@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010085549) do
+ActiveRecord::Schema.define(version: 20151010100654) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.string   "location"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151010085549) do
     t.datetime "updated_at",     null: false
     t.decimal  "longitude"
     t.decimal  "latitude"
+    t.integer  "average_review"
   end
 
   create_table "reviews", force: :cascade do |t|
