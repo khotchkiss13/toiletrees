@@ -4,3 +4,269 @@ Started GET "/" for ::1 at 2015-10-10 00:32:50 -0700
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
 Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBathrooms (20151010082915)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBathrooms (20151010082915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBathrooms (20151010082915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBathrooms (20151010082915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "bathrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "longitude" integer, "latitude" integer, "location" varchar, "floor_no" integer, "user_id" integer, "post_time" datetime, "restroom_hours" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151010082915"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20151010083846)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151010083846"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20151010084244)
+  [1m[35m (0.0ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/kylehotchkiss/toiletrees/db/migrate/20151010084244_devise_create_users.rb:34)
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151010084244"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeLongAndLat (20151010084524)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TEMPORARY TABLE "abathrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "longitude" integer, "latitude" integer, "location" varchar, "floor_no" integer, "user_id" integer, "post_time" datetime, "restroom_hours" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "bathrooms"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "bathrooms"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bathrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" integer, "location" varchar, "floor_no" integer, "user_id" integer, "post_time" datetime, "restroom_hours" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "abathrooms"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "abathrooms"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "abathrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" integer, "location" varchar, "floor_no" integer, "user_id" integer, "post_time" datetime, "restroom_hours" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "bathrooms"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "bathrooms"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bathrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar, "floor_no" integer, "user_id" integer, "post_time" datetime, "restroom_hours" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "abathrooms"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "abathrooms"
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "bathrooms" ADD "longitude" decimal[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "bathrooms" ADD "latitude" decimal
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151010084524"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Relations (20151010085549)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "bathroom" ADD "user_id" integer[0m
+SQLite3::SQLException: no such table: bathroom: ALTER TABLE "bathroom" ADD "user_id" integer
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Relations (20151010085549)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "bathrooms" ADD "user_id" integer[0m
+SQLite3::SQLException: duplicate column name: user_id: ALTER TABLE "bathrooms" ADD "user_id" integer
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Relations (20151010085549)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "reviews" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "reviews" ADD "bathroom_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151010085549"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-10-10 02:02:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 24ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for ::1 at 2015-10-10 02:02:30 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.0) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.5ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/console.js within layouts/javascript (52.6ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/index.html (121.7ms)
+
+
+Started GET "/users/sing_in" for ::1 at 2015-10-10 02:03:36 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/sing_in"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.0) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/kylehotchkiss/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.9ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/console.js within layouts/javascript (40.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.0/lib/web_console/templates/index.html (87.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-10-10 02:03:41 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/kylehotchkiss/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 1333ms (Views: 1321.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bathrooms-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/scaffolds-f84134aed7f44845554fbde4ed16bb6a.css?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/application-767dce0fc2d49ef76beb4180c52a6b60.css?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/bathrooms-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-10-10 02:03:42 -0700

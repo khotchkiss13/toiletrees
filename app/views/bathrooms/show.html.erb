@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @bathroom.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @bathroom.latitude %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @bathroom.location %>
+</p>
+
+<p>
+  <strong>Floor no:</strong>
+  <%= @bathroom.floor_no %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bathroom.user_id %>
+</p>
+
+<p>
+  <strong>Post time:</strong>
+  <%= @bathroom.post_time %>
+</p>
+
+<p>
+  <strong>Restroom hours:</strong>
+  <%= @bathroom.restroom_hours %>
+</p>
+
+<%= link_to 'Edit', edit_bathroom_path(@bathroom) %> |
+<%= link_to 'Back', bathrooms_path %>

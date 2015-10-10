@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  longitude: 
+  latitude: 
+  location: MyString
+  floor_no: 
+  user_id: 
+  post_time: 2015-10-10 01:29:15
+  restroom_hours: MyString
+
+two:
+  longitude: 
+  latitude: 
+  location: MyString
+  floor_no: 
+  user_id: 
+  post_time: 2015-10-10 01:29:15
+  restroom_hours: MyString
