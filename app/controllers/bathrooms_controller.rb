@@ -61,6 +61,18 @@ class BathroomsController < ApplicationController
     end
   end
 
+  # POST /bathrooms/1/verify
+  # POST /bathrooms/1/verify
+  def verify
+    @bathroom.verify
+  end
+
+  # POST /bathrooms/1/flag
+  # POST /bathrooms/1/flag
+  def flag
+    @bathroom.flag
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bathroom
