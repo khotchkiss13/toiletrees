@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Toiletrees</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'material.min', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+<!--   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="app/assets/stylesheets/css/material.min.css"> -->
+  <!-- <link rel="stylesheet" href="app/assets/stylesheets/application.css"> -->
+  <!-- <link rel="manifest" href="app/assets/javascripts/js/manifest.json"> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'material.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'manifest', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Find the closest bathroom!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-TileColor" content="#ffffff">
+
+  <style>
+  #view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+  }
+  </style>
 </head>
-<body>
+
+<body bgcolor="#EEEEEE">
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="trees-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="mdl-layout-spacer trees-spacer"></div>
+          <span class="trees-title mdl-layout-title">
+            <div class="trees-navigation-container">
+              <nav class="trees-navigation mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contact Us</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a>
+              </nav>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
 
 <%= yield %>
 

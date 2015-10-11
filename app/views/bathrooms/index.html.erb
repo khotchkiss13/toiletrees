@@ -1,39 +1,11 @@
-<p id="notice"><%= notice %></p>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+      <a href="index.html"><img class="trees-logo-image" src="<%= asset_path( 'toiletrees-web-logo.png' ) %>"></a>
+    </div>
+  </div>
 
-<h1>Listing Bathrooms</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Longitude</th>
-      <th>Latitude</th>
-      <th>Location</th>
-      <th>Floor no</th>
-      <th>User</th>
-      <th>Post time</th>
-      <th>Restroom hours</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bathrooms.each do |bathroom| %>
-      <tr>
-        <td><%= bathroom.longitude %></td>
-        <td><%= bathroom.latitude %></td>
-        <td><%= bathroom.location %></td>
-        <td><%= bathroom.floor_no %></td>
-        <td><%= bathroom.user_id %></td>
-        <td><%= bathroom.post_time %></td>
-        <td><%= bathroom.restroom_hours %></td>
-        <td><%= link_to 'Show', bathroom %></td>
-        <td><%= link_to 'Edit', edit_bathroom_path(bathroom) %></td>
-        <td><%= link_to 'Destroy', bathroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bathroom', new_bathroom_path %>
+  <div class="search-box">
+    <div class="search-container">
+      <input type="search" id="search" placeholder="Enter a location" />
+    </div>
+  </div>

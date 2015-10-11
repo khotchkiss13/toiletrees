@@ -1,15 +1,207 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- *= require_tree .
- *= require_self
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #EEEEEE;
+  color: #fff;
+}
+
+::selection {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.trees-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.trees-mobile-title {
+  display: none !important;
+}
+
+.trees-header {
+  overflow: visible;
+  background-color: #EEEEEE;
+  position: fixed;
+  top: 0;
+}
+
+  .trees-header .mdl-layout__header {
+    padding: 0 40px 0 40px;
+  }
+
+  .trees-header .mdl-layout__header-row {
+  	background-color: #EEEEEE;
+  }
+
+  .trees-header .mdl-layout__header-row .mdl-navigation__link {
+    font-family: 'Roboto', sans-serif;
+    color: #2bb673;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .trees-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    display: inline-block;
+    direction: ltr;
+    order: 1;
+    width: 330px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .trees-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    justify-content: flex-start;
+    align-items: center;
+    width: 800px;
+  }
+
+  .trees-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    padding: 0 16px;
+  }
+
+    .trees-navigation .mdl-navigation__link:hover {
+      opacity: 0.6;
+    }
+
+
+.trees-spacer {
+  -webkit-flex-grow: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2; }
+
+.trees-logo-image {
+  padding-top: 50px;
+  width: 30%;
+  height: auto;
+  margin: 8% 35% 0;
+}
+
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .trees-navigation-container {
+    display: none;
+  }
+
+  .trees-title {
+    display: none !important;
+  }
+
+  .trees-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .trees-more-button {
+    display: none;
+  }
+
+  .trees-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .trees-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+}
+
+.search-box {
+  margin: 20px auto;
+  width: 300px;
+  height: 50px;
+}
+
+.search-container {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+  .search-container input#search{
+    font-family: 'Roboto' sans-serif;
+    width: 300px;
+    height: 50px;
+    background: #25ad68;
+    border: none;
+    font-size: 11pt;
+    float: left;
+    color: #EEEEEE;
+    padding-left: 20px;
+    padding-right: 10px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .search-container input#search::-webkit-input-placeholder {
+    color: white;
+    opacity: 0.7; 
+    outline: none;
+    box-shadow: none;
+  }
+   
+  .search-container input#search:-moz-placeholder { /* Firefox 18- */
+    color: white;
+    opacity: 0.7;
+  }
+   
+  .search-container input#search::-moz-placeholder {  /* Firefox 19+ */
+    color: white;
+    opacity: 0.7; 
+  }
+   
+  .search-container input#search:-ms-input-placeholder {  
+    color: white;
+    opacity: 0.7; 
+  }
+
+  .search-container input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline: none;
+    box-shadow: none;
+    color: #EEEEEE;
+  }
